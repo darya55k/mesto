@@ -1,7 +1,6 @@
 .profile__info{
     color: white;
     display: flex;
-    flex-direction: column;
     padding-left: 30px;
     padding: 0;
     flex-direction: unset;
