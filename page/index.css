@@ -1,0 +1,255 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+@import url(../blocks/blocks.css);
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/cards/__bottom/cards__bottom.css);
+@import url(../blocks/cards/__item/cards__item.css);
+@import url(../blocks/cards/__buttom-like/cards__buttom-like.css);
+@import url(../blocks/cards/__photo/cards__photo.css);
+@import url(../blocks/cards/__text/cards__text.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/footer__text.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__line/header__line.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/page/page.css);
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__buttom-add/profile__buttom-add.css);
+@import url(../blocks/profile/__buttom-edit/profile__buttom-edit.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__subtitle/profile__subtitle.css);
+@import url(../blocks/profile/__title/profile__title.css);
+@import url(../blocks/profile/__plus/profile__plus.css);
+@import url(../blocks/profile/__title-bottom/profile__title-bottom.css);
+@import url(../blocks/profile/__text/profile__text.css);
+@import url(../blocks/root/root.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__content/popup__content.css);
+@import url(../blocks/popup/__overlay/popup__overlay.css);
+@import url(../blocks/popup/__close-icon/popup__close-icon.css);
+@import url(../blocks/popup/_open/popup_open.css);
+@import url(../blocks/content/content.css);
+@import url(../blocks/form/__button/form__button.css);
+@import url(../blocks/form/__handlers/form__handlers.css);
+@import url(../blocks/form/__heading/form__heading.css);
+@import url(../blocks/form/__input-container/form__input-container.css);
+@import url(../blocks/form/__item-subtitle/form__item-subtitle.css);
+@import url(../blocks/form/__item/form__item.css);
+@import url(../blocks/form/__main-container/form__main-container.css);
+@import url(../blocks/profile/__buttom-pict/profile__buttom-pict.css);
+@import url(../blocks/cards/__like-pic/cards__like-pic.css);
+@import url(../blocks/popup/__close-pic/popup__close-pic.css);
+
+/*.root{
+    background-color: black;
+}
+.page{
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.header{
+    max-width: 880px;
+    margin: 0 auto;
+    margin-top: 45px;
+   
+}
+.header__logo{
+    max-width: 142px;
+    max-height: 33px;
+    
+}
+.header__line{
+max-width: 880px;
+margin: 0 auto;
+padding-top: 41px;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+}
+.profile__info{
+    color: white;
+    
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+.profile__buttom-edit{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    padding-left: 18px;
+
+}
+.profile__title{
+    margin: 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 48px;
+    display: flex;
+
+}
+.profile__subtitle{
+    margin: 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    padding-top: 16px;
+}
+.profile__buttom-add{
+    padding-left: 244px;
+}
+.cards__bottom{
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 246px;
+    padding-top: 25px;
+    padding-left: 21px;
+    padding-bottom: 31px;
+}
+.cards{
+    max-width: 880px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 282px);
+    justify-content: center;
+    gap: 17px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.cards__photo{
+    height: 282px;
+}
+.cards__item{
+    border-radius: 10px;
+    background-color: white;
+}
+.cards__text{
+    margin: 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+
+}
+.cards__like{
+    width: 22px;
+    height: 19px;
+}
+.footer{
+    padding-top: 66px;
+    margin: 0 auto;
+    max-width: 880px;
+}
+.footer__text{
+    color: rgba(84, 84, 84, 1);
+}
+.form__input-container{
+    border-style: none;
+    padding: 0;
+    padding-top: 54px;
+    text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+    
+}
+@media screen and (max-width: 1279px) {
+    .form__input-container{
+        padding-top: 75px;
+    }
+}
+.form__item{
+    display: block;
+    width: 100%;
+    border-width: 0 0 1px 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 13px;
+}
+.form__main-container{
+    max-width: 358px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 1279px) {
+    .form__main-container{
+        max-width: 238px;
+    }
+}
+.form__handlers{
+    padding: 0;
+    border-width: 0;
+    margin-top: 48px;
+    
+    
+}
+.form__item-subtitle{
+    margin-top: 30px;
+}
+.form__button{
+    width: 100%;
+    height: 50px;
+    color: white;
+    background-color: black;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+}
+@media screen and (max-width: 1279px) {
+    .form__button{
+        font-size: 14px;
+line-height: 17px;
+    height: 46px;
+    
+    }
+}
+.form__button:hover{
+
+opacity: 0.8;
+}
+.form__heading{
+    margin: 0;
+    padding-top: 34px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+}
+@media screen and (max-width: 1279px) {
+    .form__heading{
+    
+font-size: 18px;
+line-height: 22px;
+padding-top: 25px;
+    }
+}
+.profile__buttom-pict{
+    padding: 0;
+}
+.cards__like-pic{
+    width: 22px;
+    height: 19px;
+}
+.cards__like-pic:active{
+background: black;
+}
+.popup__close-pic{
+    width: 58px;
+    height: 58px;
+}*/

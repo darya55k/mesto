@@ -1,0 +1,11 @@
+.form__item {
+    display: block;
+    width: 100%;
+    border-width: 0 0 1px 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 13px;
+}

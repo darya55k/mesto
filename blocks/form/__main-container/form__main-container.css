@@ -1,0 +1,9 @@
+.form__main-container{
+    max-width: 358px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 1279px) {
+    .form__main-container {
+        max-width: 238px;
+    }
+}

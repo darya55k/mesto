@@ -1,0 +1,21 @@
+.profile__buttom-edit{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    padding: 0;
+    padding-left: 18px;
+    align-self: flex-start;
+    margin-top: 15px;
+    background-color: transparent;
+    border-width: 0;
+}
+@media screen and (max-width: 1279px) {
+    .profile__buttom-edit {
+        width: 18px;
+        height: 18px;
+        padding: 0;
+        margin-left: 10px;
+        align-self: flex-start;
+        margin-top: 8px;
+    }
+}
