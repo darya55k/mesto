@@ -5,6 +5,8 @@
     border: 2px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 2px;
+    padding: 0;
+    background: transparent;
     
 }
 .profile__buttom-add:hover{
