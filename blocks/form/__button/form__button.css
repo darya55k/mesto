@@ -9,6 +9,8 @@
     font-size: 18px;
     line-height: 22px;
     text-align: center;
+    padding: 0;
+    border-width: 0;
 }
 @media screen and (max-width: 1279px) {
     .form__button {
