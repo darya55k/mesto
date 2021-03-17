@@ -6,7 +6,7 @@ let popupTitle = document.querySelector('.form__item_input_title');
 let popupSubtitle = document.querySelector('.form__item_input_subtitle');
 let profileSubtitle = document.querySelector('.profile__subtitle');
 let profileTitle = document.querySelector('.profile__title');
-let formElement = document.querySelector('.form__content');
+let formElement = document.querySelector('.form');
 
 function formSubmitHandler(evt) {
     evt.preventDefault();
