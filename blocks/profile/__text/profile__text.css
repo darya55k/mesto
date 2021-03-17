@@ -1,4 +1,9 @@
 .profile__text{
-    max-width: 293px;
+    max-width: 294px;
+}
+@media screen and (max-width: 1279px) {
+    .profile__text {
+        max-width: 282px;
+    }
 }
 

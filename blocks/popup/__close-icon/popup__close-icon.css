@@ -2,11 +2,12 @@
     width: 58px;
     height: 58px;
     position: absolute;
-    left: 430px;
+    left: 100%;
     top: -58px;
     padding: 0;
     background: transparent;
     border-width: 0;
+    cursor: pointer;
 }
 @media screen and (max-width: 1279px) {
     .popup__close-icon{

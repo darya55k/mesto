@@ -2,6 +2,10 @@
     max-width: 880px;
     margin: 0 auto;
     margin-top: 45px;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: rgba(84, 84, 84, 0.7);
+    padding-bottom: 41px;
    
 }
 @media screen and (max-width: 1279px) {

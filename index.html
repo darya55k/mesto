@@ -4,93 +4,90 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="page/index.css" />
-        <title>Mesto</title>
+        <title>Место</title>
     </head>
     <body class="root">
         <div class="page">
             <div class="popup">
                 <div class="popup__overlay"></div>
                 <div class="popup__content">
-                    <button type="button" class="popup__close-icon"><img class="popup__close-pic" src="images/Close-but.png" alt="Закрыть" /></button>
-                    <section class="form">
-                        <form class="form__content">
-                            <div class="form__main-container">
-                                <h2 class="form__heading">Редактировать профиль</h2>
-                                <fieldset class="form__input-container">
-                                    <input type="text" class="form__item form__item-title" />
-                                    <input type="text" class="form__item form__item-subtitle" />
-                                </fieldset>
-                                <fieldset class="form__handlers">
-                                    <button type="submit" class="form__button">Сохранить</button>
-                                </fieldset>
-                            </div>
-                        </form>
-                    </section>
+                    <button type="button" class="popup__close-icon"><img class="popup__close-pic" src="images/Close-popup.svg" alt="Закрыть" /></button>
+                    <form class="form__content" name="popup">
+                        <div class="form__main-container">
+                            <h2 class="form__heading">Редактировать профиль</h2>
+                            <fieldset class="form__input-container">
+                                <input type="text" name="title" class="form__item form__item_input_title" />
+                                <input type="text" name="subtitle" class="form__item form__item_input_subtitle" />
+                            </fieldset>
+                            <fieldset class="form__handlers">
+                                <button type="submit" class="form__button">Сохранить</button>
+                            </fieldset>
+                        </div>
+                    </form>
                 </div>
             </div>
 
             <header class="header">
-                <img src="images/header-logo.svg" alt="Mesto" class="header__logo" />
-                <img src="images/Line.png" class="header__line" alt="Логотип" />
+                <img src="images/header-logo.svg" alt="Место" class="header__logo" />
             </header>
 
             <main class="content">
                 <section class="profile">
-                    <img class="profile__avatar" src="images/profile.png" alt="Изображение профиля" />
+                    <img class="profile__avatar" src="images/profile-pict.jpg" alt="Изображение профиля" />
                     <div class="profile__info">
                         <div class="profile__text">
-                            <h2 class="profile__title">Жак-Ив Кусто</h2>
+                            <h1 class="profile__title">Жак-Ив Кусто</h1>
 
                             <p class="profile__subtitle">Исследователь океана</p>
                         </div>
-                        <button type="button" class="profile__buttom-edit" id="open_popup_btn"><img class="profile__buttom-pict" src="images/profile-edit-button.svg" alt="Редактировать" /></button>
+                        <button type="button" class="profile__button-edit" id="open_popup_btn"><img class="profile__button-pict" src="images/profile-edit-button.svg" alt="Редактировать" /></button>
                     </div>
-                    <button type="button" class="profile__buttom-add">
-                        <img class="profile__plus" src="images/plus.png" alt="Добавить" />
+                    <button type="button" class="profile__button-add">
+                        <img class="profile__plus" src="images/profile-plus.svg" alt="Добавить" />
                     </button>
                 </section>
                 <section class="elements">
                     <ul class="cards">
                         <li class="cards__item">
                             <img class="cards__photo" src="images/karach.png" alt="Карачаевск" />
-                            <div class="cards__bottom">
-                                <p class="cards__text">Карачаевск</p>
-                                <button type="button" class="cards__buttom-like"><img class="cards__like-pic" src="images/like.svg" alt="Лайк" /></button>
+                            <div class="cards__info">
+                                <h2 class="cards__text">Карачаевск</h2>
+                                <button type="button" class="cards__button-like"><img class="cards__like-pic" src="images/like.svg" alt="Лайк" /></button>
                             </div>
                         </li>
                         <li class="cards__item">
                             <img class="cards__photo" src="images/elbrus.png" alt="Гора Эльбрус" />
-                            <div class="cards__bottom">
-                                <p class="cards__text">Гора Эльбрус</p>
-                                <button type="button" class="cards__buttom-like"><img class="cards__like-pic" src="images/like.svg" alt="Изображение" /></button>
+                            <div class="cards__info">
+                                <h2 class="cards__text">Гора Эльбрус</h2>
+                                <button type="button" class="cards__button-like"><img class="cards__like-pic" src="images/like.svg" alt="Изображение" /></button>
                             </div>
                         </li>
                         <li class="cards__item">
                             <img class="cards__photo" src="images/dombai.png" alt="Домбай" />
-                            <div class="cards__bottom">
-                                <p class="cards__text">Домбай</p>
-                                <button type="button" class="cards__buttom-like"><img class="cards__like-pic" src="images/like.svg" alt="Изображение" /></button>
+                            <div class="cards__info">
+                                <h2 class="cards__text">Домбай</h2>
+                                <button type="button" class="cards__button-like"><img class="cards__like-pic" src="images/like.svg" alt="Изображение" /></button>
                             </div>
                         </li>
                         <li class="cards__item">
                             <img class="cards__photo" src="images/elbrus.png" alt="Гора Эльбрус" />
-                            <div class="cards__bottom">
-                                <p class="cards__text">Гора Эльбрус</p>
-                                <button type="button" class="cards__buttom-like"><img class="cards__like-pic" src="images/like.svg" alt="Изображение" /></button>
+                            <div class="cards__info">
+                                <h2 class="cards__text">Гора Эльбрус</h2>
+                                <button type="button" class="cards__button-like"><img class="cards__like-pic" src="images/like.svg" alt="Изображение" /></button>
                             </div>
                         </li>
                         <li class="cards__item">
                             <img class="cards__photo" src="images/dombai.png" alt="Домбай" />
-                            <div class="cards__bottom">
-                                <p class="cards__text">Домбай</p>
-                                <button type="button" class="cards__buttom-like"><img class="cards__like-pic" src="images/like.svg" alt="Изображение" /></button>
+                            <div class="cards__info">
+                                <h2 class="cards__text">Домбай</h2>
+                                <button type="button" class="cards__button-like"><img class="cards__like-pic" src="images/like.svg" alt="Изображение" /></button>
                             </div>
                         </li>
                         <li class="cards__item">
                             <img class="cards__photo" src="images/karach.png" alt="Карачаевск" />
-                            <div class="cards__bottom">
-                                <p class="cards__text">Карачаевск</p>
-                                <button type="button" class="cards__buttom-like"><img class="cards__like-pic" src="images/like.png" alt="Изображение" /></button>
+                            <div class="cards__info">
+                                <h2 class="cards__text">Карачаевск</h2>
+                                <button type="button" class="cards__button-like"><img class="cards__like-pic" src="images/like.svg" alt="Изображение" /></button>
                             </div>
                         </li>
                     </ul>
