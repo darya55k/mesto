@@ -2,9 +2,3 @@
     width: 22px;
     height: 19px;
 }
-.cards__like-pic:hover{
-    opacity: 0.5;
-}
-.cards__like-pic:active{
-    background-color: black;
-}
