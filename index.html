@@ -8,8 +8,6 @@
     </head>
     <body class="root">
         <div class="page">
-            
-
             <header class="header">
                 <img src="images/header-logo.svg" alt="Место" class="header__logo" />
             </header>
@@ -20,38 +18,32 @@
                     <div class="profile__info">
                         <div class="profile__text">
                             <h1 class="profile__title">Жак-Ив Кусто</h1>
-
                             <p class="profile__subtitle">Исследователь океана</p>
                         </div>
-                        <button type="button" class="profile__button-edit" ><img class="profile__button-pict" src="images/profile-edit-button.svg" alt="Редактировать" /></button>
+                        <button type="button" class="profile__button-edit"><img class="profile__button-pict" src="images/profile-edit-button.svg" alt="Редактировать" /></button>
                     </div>
                     <button type="button" class="profile__button-add">
                         <img class="profile__plus" src="images/profile-plus.svg" alt="Добавить" />
                     </button>
-                    
                 </section>
-                <section class = "list"></section>
-                
+                <section class="list">
+                </section>
+
                 <section class="elements">
-                    
-                    
                     <ul class="cards">
                         <template class="list-item-template">
-                        <li class="cards__item">
-                            <button type="button" class="cards__button-delete"></button>
-                            <img class="cards__photo cards__photo-open" src="#" alt="#" />
-                            
-                            <div class="cards__info">
-                                <h2 class="cards__text cards__text-photo"></h2>
-                                <button type="button" class="cards__button-like"></button>
-                            </div>
-                        </li>
+                            <li class="cards__item">
+                                <button type="button" class="cards__button-delete"></button>
+                                <img class="cards__photo cards__photo-open" src="#" alt="#" />
+
+                                <div class="cards__info">
+                                    <h2 class="cards__text cards__text-photo"></h2>
+                                    <button type="button" class="cards__button-like"></button>
+                                </div>
+                            </li>
                         </template>
                     </ul>
-                
                 </section>
-            
-            
             </main>
             <footer class="footer">
                 <p class="footer__text">&copy;2020 Mesto Russia</p>
@@ -92,13 +84,13 @@
                     </form>
                 </div>
             </div>
-           <div class="popup popup-photo">
-                    <div class="popup__overlay-photo"></div>
-                    <div class="popup__content-profile">
-                        <button type="button" class="popup__close-icon popup__close-photo"><img class="popup__close-pic" src="images/Close-popup.svg" alt="Закрыть" /></button>
-                        <img class="popup__photo">
-                        <p class="popup__text"></p>
-                    </div>
+            <div class="popup popup-photo">
+                <div class="popup__overlay-photo"></div>
+                <div class="popup__content-profile">
+                    <button type="button" class="popup__close-icon popup__close-photo"><img class="popup__close-pic" src="images/Close-popup.svg" alt="Закрыть" /></button>
+                    <img class="popup__photo" />
+                    <p class="popup__text"></p>
+                </div>
             </div>
         </div>
         <script src="scripts/index.js"></script>
