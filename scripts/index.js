@@ -15,7 +15,6 @@ const photoText = document.querySelector(".cards__text");
 const photoPhoto = document.querySelector(".cards__photo");
 const profileForm = document.getElementById("form-profile");
 const addCardForm = document.querySelector(".form-photo");
-
 const popupPict = document.querySelector(".popup__photo");
 const popupName = document.querySelector(".popup__text");
 const popupPhoto = document.querySelector(".popup-photo");
@@ -60,28 +59,28 @@ const listItemTemplate = document.querySelector(".list-item-template").content;
 
 function createCard(element) {
     const listItem = listItemTemplate.cloneNode(true);
+    const openPopupPhoto = listItem.querySelector(".cards__photo-open");
     listItem.querySelector(".cards__text").textContent = element.name;
-    listItem.querySelector(".cards__photo").src = element.link;
-    listItem.querySelector(".cards__photo").alt = element.name;
+    const cardPhoto = listItem.querySelector(".cards__photo");
+    cardPhoto.src = element.link;
+    cardPhoto.alt = element.name;
     const like = listItem.querySelector(".cards__button-like");
     like.addEventListener("click", likeCardHandler);
     const trashButton = listItem.querySelector(".cards__button-delete");
     trashButton.addEventListener("click", deleteCardHandler);
-    const openPopupPhoto = listItem.querySelector(".cards__photo-open");
-    openPopupPhoto.addEventListener("click", () => openPop(popupPhoto));
     openPopupPhoto.addEventListener("click", openPopupPict);
     return listItem;
 }
 
 //фуекция добавления карточек в контейнер
 function renderCard(element, list) {
-    list.prepend(createCard(element));
+    list.prepend(element);
 }
 
 //клонирование карточек
 initialCards.forEach((element) => {
-    createCard(element);
-    renderCard(element, list);
+    const card = createCard(element);
+    renderCard(card, list);
 });
 
 //добавление информации о карточке
@@ -90,8 +89,8 @@ function addInfoPhoto(evt) {
     const element = { name: popupPhotoText.value, link: popupPhotoPhoto.value };
     popupPhotoText.value = "";
     popupPhotoPhoto.value = "";
-    createCard(element);
-    renderCard(element, list);
+    const card = createCard(element);
+    renderCard(card, list);
     closePop(popupCard);
 }
 
@@ -112,6 +111,8 @@ function openPopupPict(evt) {
     const titleElement = parent.querySelector(".cards__text");
     const title = titleElement.textContent;
     popupName.textContent = title;
+    popupPict.alt = title;
+    openPop(popupPhoto);
 }
 
 addCardForm.addEventListener("submit", addInfoPhoto);
