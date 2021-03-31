@@ -31,17 +31,6 @@
 
                 <section class="elements">
                     <ul class="cards">
-                        <template class="list-item-template">
-                            <li class="cards__item">
-                                <button type="button" class="cards__button-delete"></button>
-                                <img class="cards__photo cards__photo-open" src="#" alt="#" />
-
-                                <div class="cards__info">
-                                    <h2 class="cards__text cards__text-photo"></h2>
-                                    <button type="button" class="cards__button-like"></button>
-                                </div>
-                            </li>
-                        </template>
                     </ul>
                 </section>
             </main>
@@ -52,7 +41,7 @@
                 <div class="popup__overlay"></div>
                 <div class="popup__content">
                     <button type="button" class="popup__close-icon popup__close-profile"><img class="popup__close-pic" src="images/Close-popup.svg" alt="Закрыть" /></button>
-                    <form class="form" name="popup">
+                    <form class="form" name="popupProfile" id="form-profile">
                         <div class="form__main-container">
                             <h2 class="form__heading">Редактировать профиль</h2>
                             <fieldset class="form__input-container">
@@ -66,16 +55,16 @@
                     </form>
                 </div>
             </div>
-            <div class="popup popup-profile">
+            <div class="popup popup-card">
                 <div class="popup__overlay"></div>
                 <div class="popup__content">
                     <button type="button" class="popup__close-icon popup__close-card"><img class="popup__close-pic" src="images/Close-popup.svg" alt="Закрыть" /></button>
-                    <form class="form form-photo" name="popup">
+                    <form class="form form-photo" name="popupCard">
                         <div class="form__main-container">
                             <h2 class="form__heading">Новое место</h2>
                             <fieldset class="form__input-container">
-                                <input type="text" name="title" class="form__item form__item_input_text" placeholder="Название" />
-                                <input type="text" name="subtitle" class="form__item form__item_input_photo" placeholder="Ссылка на картинку" />
+                                <input type="text" name="text" class="form__item form__item_input_text" placeholder="Название" />
+                                <input type="text" name="link" class="form__item form__item_input_photo" placeholder="Ссылка на картинку" />
                             </fieldset>
                             <fieldset class="form__handlers">
                                 <button type="submit" class="form__button">Сохранить</button>
@@ -93,6 +82,17 @@
                 </div>
             </div>
         </div>
+        <template class="list-item-template">
+            <li class="cards__item">
+                <button type="button" class="cards__button-delete"></button>
+                <img class="cards__photo cards__photo-open" src="#" alt="#" />
+
+                <div class="cards__info">
+                    <h2 class="cards__text cards__text-photo"></h2>
+                    <button type="button" class="cards__button-like"></button>
+                </div>
+            </li>
+        </template>
         <script src="scripts/index.js"></script>
     </body>
 </html>
