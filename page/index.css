@@ -42,4 +42,7 @@
 @import url(../blocks/popup/__text/popup__text.css);
 @import url(../blocks/popup/__photo/popup__photo.css);
 @import url(../blocks/popup/__overlay-photo/popup__overlay-photo.css);
+@import url(../blocks/form/__span/_input/form__span_input_error.css);
+@import url(../blocks/form/__button/_disabled/form__button_disabled.css);
+@import url(../blocks/form/__item/_input/form__item_input_error.css);
 

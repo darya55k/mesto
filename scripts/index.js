@@ -18,6 +18,7 @@ const addCardForm = document.querySelector(".form-photo");
 const popupPict = document.querySelector(".popup__photo");
 const popupName = document.querySelector(".popup__text");
 const popupPhoto = document.querySelector(".popup-photo");
+const popupList = document.querySelectorAll('.popup');
 
 //редактирование
 function submitProfileForm(evt) {
@@ -29,13 +30,26 @@ function submitProfileForm(evt) {
 profileForm.addEventListener("submit", submitProfileForm);
 
 //общая функция открытия попапа
-function openPop(modal) {
-    modal.classList.add("popup_open");
+function openPop(popup) {
+    popup.classList.add("popup_open");
+  document.addEventListener('keydown', escHandler)
 }
 
-function closePop(modal) {
-    modal.classList.remove("popup_open");
+//общая функция закрытия попапа
+function closePop(popup) {
+    popup.classList.remove("popup_open");
+  document.removeEventListener('keydown', escHandler);
 }
+
+//закрытие попапа по нажатию на оверлей и крестик
+popupList.forEach((popup) => {
+    popup.addEventListener('click', (evt) => {
+      if (evt.target.classList.contains('popup__overlay') || evt.target.classList.contains('popup__close-pic')) {
+        closePop(popup)
+      }
+    })
+  })
+
 
 //Заполнения формы редактировая информацией
 function addPopupInfo() {
@@ -50,9 +64,7 @@ openPopupProfile.addEventListener("click", function () {
 openPopupCard.addEventListener("click", () => openPop(popupCard));
 //openPopupPhoto.addEventListener('click', () => openPop(popupPhoto));
 
-closePopupProfile.addEventListener("click", () => closePop(popupProfile));
-closePopupCard.addEventListener("click", () => closePop(popupCard));
-closePopupPhoto.addEventListener("click", () => closePop(popupPhoto));
+
 
 const list = document.querySelector(".list");
 const listItemTemplate = document.querySelector(".list-item-template").content;
@@ -116,3 +128,20 @@ function openPopupPict(evt) {
 }
 
 addCardForm.addEventListener("submit", addInfoPhoto);
+
+
+//Функция закрытия при нажатии на ESC
+const escHandler = (event) => {
+    const openPopup = document.querySelector('.popup_open');
+    if (event.key === 'Escape') {
+      closePop(openPopup);
+    }
+  }
+
+  
+  
+
+
+  
+
+
