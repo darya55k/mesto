@@ -19,7 +19,8 @@ const popupPict = document.querySelector(".popup__photo");
 const popupName = document.querySelector(".popup__text");
 const popupPhoto = document.querySelector(".popup-photo");
 const popupList = document.querySelectorAll('.popup');
-const addSaveCardButton = document.querySelector('.form__button');
+const addSaveCardButton = document.querySelectorAll('.form__button');
+const button = document.querySelector('.form__card-button');
 
 //редактирование
 function submitProfileForm(evt) {
@@ -64,7 +65,6 @@ openPopupProfile.addEventListener("click", function () {
 });
 
 openPopupCard.addEventListener("click", function() {
-  const button = document.querySelector('.form__card-button');
   saveCardButton(button);
   openPop(popupCard);
 
@@ -74,7 +74,7 @@ openPopupCard.addEventListener("click", function() {
 
 const saveCardButton = (buttonElement) => {
   buttonElement.setAttribute('disabled', true);
-  buttonElement.classList.add('form__button_disabled');
+  buttonElement.classList.add(validationConfig.inactiveButtonClass);
 }
 
 const list = document.querySelector(".cards");
@@ -115,9 +115,12 @@ function addInfoPhoto(evt) {
     const card = createCard(element);
     renderCard(card, list);
     closePop(popupCard);
-    addSaveCardButton.setAttribute('disabled', true);
-    addSaveCardButton.classList.add('form__button_disabled');
 }
+
+addSaveCardButton.forEach(button =>{
+  //button.removeAttribute("disabled");
+  button.classList.add(validationConfig.inactiveButtonClass);
+})
 
 //лайки
 function likeCardHandler(evt) {
