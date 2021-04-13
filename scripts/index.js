@@ -19,6 +19,7 @@ const popupPict = document.querySelector(".popup__photo");
 const popupName = document.querySelector(".popup__text");
 const popupPhoto = document.querySelector(".popup-photo");
 const popupList = document.querySelectorAll('.popup');
+const addSaveCardButton = document.querySelector('.form__button');
 
 //редактирование
 function submitProfileForm(evt) {
@@ -61,12 +62,22 @@ openPopupProfile.addEventListener("click", function () {
     openPop(popupProfile);
     addPopupInfo(popupProfile);
 });
-openPopupCard.addEventListener("click", () => openPop(popupCard));
+
+openPopupCard.addEventListener("click", function() {
+  const button = document.querySelector('.form__card-button');
+  saveCardButton(button);
+  openPop(popupCard);
+
+});
+
 //openPopupPhoto.addEventListener('click', () => openPop(popupPhoto));
 
+const saveCardButton = (buttonElement) => {
+  buttonElement.setAttribute('disabled', true);
+  buttonElement.classList.add('form__button_disabled');
+}
 
-
-const list = document.querySelector(".list");
+const list = document.querySelector(".cards");
 const listItemTemplate = document.querySelector(".list-item-template").content;
 
 function createCard(element) {
@@ -84,7 +95,7 @@ function createCard(element) {
     return listItem;
 }
 
-//фуекция добавления карточек в контейнер
+//функция добавления карточек в контейнер
 function renderCard(element, list) {
     list.prepend(element);
 }
@@ -104,6 +115,8 @@ function addInfoPhoto(evt) {
     const card = createCard(element);
     renderCard(card, list);
     closePop(popupCard);
+    addSaveCardButton.setAttribute('disabled', true);
+    addSaveCardButton.classList.add('form__button_disabled');
 }
 
 //лайки
@@ -139,9 +152,9 @@ const escHandler = (event) => {
   }
 
   
+ 
+
   
-
-
   
 
 

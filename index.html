@@ -26,8 +26,7 @@
                         <img class="profile__plus" src="images/profile-plus.svg" alt="Добавить" />
                     </button>
                 </section>
-                <section class="list"></section>
-
+                
                 <section class="elements">
                     <ul class="cards"></ul>
                 </section>
@@ -50,7 +49,7 @@
                                 <span class="form__item-error popup__form-subtitle-error form__span-input-error"></span>
                             </fieldset>
                             <fieldset class="form__handlers">
-                                <button type="submit" class="form__button form__button_disabled">Сохранить</button>
+                                <button type="submit" class="form__button">Сохранить</button>
                             </fieldset>
                         </div>
                     </form>
@@ -58,9 +57,9 @@
             </div>
             <div class="popup popup-card">
                 <div class="popup__overlay"></div>
-                <div class="popup__content stop-propagation">
+                <div class="popup__content">
                     <button type="button" class="popup__close-icon popup__close-card"><img class="popup__close-pic" src="images/Close-popup.svg" alt="Закрыть" /></button>
-                    <form class="form form-photo" name="popup-card">
+                    <form class="form form-photo" name="popup-card" novalidate>
                         <div class="form__main-container">
                             <h2 class="form__heading">Новое место</h2>
                             <fieldset class="form__input-container">
@@ -70,15 +69,15 @@
                                 <span class="form__item-error popup__form-link-error form__span-input-error"></span>
                             </fieldset>
                             <fieldset class="form__handlers">
-                                <button type="submit" class="form__button form__button_disabled">Сохранить</button>
+                                <button type="submit" class="form__button form__card-button">Сохранить</button>
                             </fieldset>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="popup popup-photo">
-                <div class="popup__overlay-photo"></div>
-                <div class="popup__content-profile stop-propagation">
+                <div class="popup__overlay popup__overlay-photo"></div>
+                <div class="popup__content-profile">
                     <button type="button" class="popup__close-icon popup__close-photo"><img class="popup__close-pic" src="images/Close-popup.svg" alt="Закрыть" /></button>
                     <img class="popup__photo" src="#" alt="#"/>
                     <p class="popup__text"></p>
