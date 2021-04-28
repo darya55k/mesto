@@ -1,5 +1,3 @@
-
-
 export class Card {
   constructor(cardData, cardSelector, openPopupPicture){
     this._name = cardData.name;
