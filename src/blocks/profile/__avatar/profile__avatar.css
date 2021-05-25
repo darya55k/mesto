@@ -1,6 +1,10 @@
 .profile__avatar{
     width: 120px;
     height: 120px;
-    object-fit: contain;
     border-radius: 50%;
+}
+.profile__avatar:hover{
+    background-image: url("../../../images/avatar-cursor.svg");
+
+    cursor: pointer;
 }

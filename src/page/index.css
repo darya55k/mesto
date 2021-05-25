@@ -45,4 +45,6 @@
 @import url(../blocks/form/__span/_input/form__span_input_error.css);
 @import url(../blocks/form/__button/_disabled/form__button_disabled.css);
 @import url(../blocks/form/__item/_input/form__item_input_error.css);
+@import url(../blocks/cards/__number-likes/cards__number-likes.css);
+@import url(../blocks/profile/__avatar-container/profile__avatar-container.css);
 
