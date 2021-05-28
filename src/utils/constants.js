@@ -1,5 +1,6 @@
 export const popupProfile = ".popup-edit";
 export const popupCard = ".popup-card";
+export const popupDelete =".popup-delete";
 export const openPopupProfile = document.querySelector(".profile__button-edit");
 export const openPopupCard = document.querySelector(".profile__button-add");
 export const popupTitle = document.querySelector(".form__item_input_title");

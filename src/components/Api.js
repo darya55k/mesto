@@ -8,24 +8,17 @@ export default class Api {
         return fetch(`${this._url}/users/me`, {
             headers: this._headers
         })
-            .then(res => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}. Данные пользователя с сервера не получены`);
-            })
+            .then(res => this._checkRequestResult(res))
+            .catch(error => this._errorHandler(error));
+                
     }
 
     getInitialCards() {
         return fetch(`${this._url}/cards`, {
             headers: this._headers
         })
-            .then(res => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}. Карточки с сервера не загружены`);
-            })
+        .then(res => this._checkRequestResult(res))
+        .catch(error => this._errorHandler(error));
     }
 
     updateUserInfo(formData) {
@@ -37,12 +30,8 @@ export default class Api {
                 about: formData.subtitle,
             })
         })
-            .then(res => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}. Данные пользователя не отправлены на сервер`);
-            })
+        .then(res => this._checkRequestResult(res))
+        .catch(error => this._errorHandler(error));
     }
 
     createCard(formData) {
@@ -54,12 +43,8 @@ export default class Api {
                 link: formData.link
             })
         })
-            .then(res => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}. Карточка на сервер не добавлена`);
-            })
+        .then(res => this._checkRequestResult(res))
+        .catch(error => this._errorHandler(error));
     }
 
     removeCard(id) {
@@ -67,41 +52,21 @@ export default class Api {
             method: 'DELETE',
             headers: this._headers
         })
-            .then(res => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}. Карточку не удалось удалить`);
-            })
+        .then(res => this._checkRequestResult(res))
+        .catch(error => this._errorHandler(error));
     }
-
-    likeCard(id) {
-        return fetch(`${this._url}/cards/likes/${id}`, {
-            method: 'PUT',
-            headers: this._headers
+    setLikeStatus(cardId, like) {
+        return fetch(`${this._url}/cards/likes/${cardId}`, {
+          method: like ? 'DELETE' : 'PUT',
+          headers: this._headers,
         })
-            .then(res => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}. Лайк не поставлен`);
-            })
-    }
+          .then(res => this._checkRequestResult(res))
+          .catch(error => this._errorHandler(error));
+      }
+    
+    
 
-    unLikeCard(id) {
-        return fetch(`${this._url}/cards/likes/${id}`, {
-            method: 'DELETE',
-            headers: this._headers
-        })
-            .then(res => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}. Лайк не удален`);
-            })
-    }
-
-    popupAddAvatar(formData) {
+    setAvatar(formData) {
         return fetch(`${this._url}/users/me/avatar`, {
             method: 'PATCH',
             headers: this._headers,
@@ -109,11 +74,18 @@ export default class Api {
                 avatar: formData.avatar
             })
         })
-            .then(res => {
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}. Аватар не обновлен`);
-            })
+        .then(res => this._checkRequestResult(res))
+        .catch(error => this._errorHandler(error));
     }
+
+    _checkRequestResult(res) {
+        if (res.ok) {
+          return res.json(); 
+        }
+        return Promise.reject(`Возникла ошибка: ${res.status}`); 
+      }
+    
+      _errorHandler(error) {
+        console.log(error);
+      }
 }
