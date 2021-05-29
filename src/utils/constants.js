@@ -14,7 +14,7 @@ export const avatarForm = document.querySelector(".form-avatar");
 export const popupPhoto = ".popup-photo";
 export const template = "#newCard";
 export const list = ".cards";
-export const popupAvatar =".popup-avatar";
+export const popupEditAvatar =".popup-avatar";
 export const openPopupAvatar = document.querySelector('.profile__avatar-container');
 
 export const validationConfig = {

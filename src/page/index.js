@@ -16,7 +16,7 @@ import {
     template,
     list,
     validationConfig,
-    popupAvatar,
+    popupEditAvatar,
     openPopupAvatar,
     avatarForm,
     popupDelete,
@@ -97,9 +97,13 @@ function createCard(item) {
                 popupDeleteCard.open(cardItem, cardId);
             },
             handleLikeClick: (cardId, like) => {
-                api.setLikeStatus(cardId, like).then((card) => {
-                    cardExample.likesInfo(card);
-                });
+                api.setLikeStatus(cardId, like)
+                    .then((card) => {
+                        cardExample.likesInfo(card);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
             },
         },
         template,
@@ -149,28 +153,28 @@ openPopupCard.addEventListener("click", () => {
 const popupImage = new PopupWithImage(popupPhoto);
 popupImage.setEventListeners();
 
-const setAvatar = new PopupWithForm({
-    popupSelector: popupAvatar,
+const popupAvatar = new PopupWithForm({
+    popupSelector: popupEditAvatar,
     handleFormSubmit: (formData) => {
-        setAvatar.renderLoading(true);
+        popupAvatar.renderLoading(true);
         api.setAvatar(formData)
             .then((formData) => {
                 userInfo.setUserInfo(formData);
-                setAvatar.close();
+                popupAvatar.close();
             })
             .catch((err) => {
                 console.log(err);
             })
             .finally(() => {
-                setAvatar.renderLoading(false);
+                popupAvatar.renderLoading(false);
             });
     },
 });
 
-setAvatar.setEventListeners();
+popupAvatar.setEventListeners();
 
 openPopupAvatar.addEventListener("click", () => {
-    setAvatar.open();
+    popupAvatar.open();
     avatarFormValidator.toggleButtonState();
     avatarFormValidator.removeValidationErrors();
 });
