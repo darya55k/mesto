@@ -7,4 +7,4 @@
 Присутствует валидация форм.
 
 ## Ссылка на проект
-https://darya55k.github.io/mesto
+https://darya55k.github.io/mesto/
